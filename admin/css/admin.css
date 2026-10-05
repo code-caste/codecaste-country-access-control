@@ -1,0 +1,161 @@
+.codecaste-country-access-control-wrap .codecaste-country-access-control-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+	gap: 20px;
+	align-items: start;
+}
+
+.codecaste-country-access-control-card {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 16px 20px 8px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.codecaste-country-access-control-card h2 {
+	margin-top: 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #eee;
+}
+
+/* Every text-like input, textarea, and select on this page fills its
+   column instead of relying on WP core's fixed regular-text / large-text
+   widths (~400px). The sidebar column can be as narrow as 280px at ANY
+   screen size (it's a grid track, not a mobile artifact), so this is not
+   scoped to a media query. */
+.codecaste-country-access-control-wrap input[type="text"],
+.codecaste-country-access-control-wrap input[type="url"],
+.codecaste-country-access-control-wrap input[type="number"],
+.codecaste-country-access-control-wrap input[type="file"],
+.codecaste-country-access-control-wrap textarea,
+.codecaste-country-access-control-wrap select {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.codecaste-country-access-control-country-search-wrap {
+	margin-bottom: 8px;
+}
+
+.codecaste-country-access-control-dl {
+	margin: 0 0 16px;
+}
+
+.codecaste-country-access-control-dl dt {
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.codecaste-country-access-control-dl dd {
+	margin: 4px 0 0;
+}
+
+.codecaste-country-access-control-test-result {
+	margin-top: 12px;
+	padding: 10px 12px;
+	background: #f6f7f7;
+	border-left: 4px solid #2271b1;
+}
+
+.codecaste-country-access-control-log-table td,
+.codecaste-country-access-control-log-table th {
+	font-size: 12px;
+}
+
+.codecaste-country-access-control-badge {
+	display: inline-block;
+	padding: 2px 6px;
+	font-size: 11px;
+	font-weight: 600;
+	border-radius: 3px;
+	background: #e5e5e5;
+	color: #333;
+}
+
+.codecaste-country-access-control-badge-success {
+	background: #e7f4e8;
+	color: #1e4620;
+}
+
+.codecaste-country-access-control-badge-danger {
+	background: #fcf0f0;
+	color: #8c1d1d;
+}
+
+/* ==========================================================================
+   Responsive breakpoints
+   ========================================================================== */
+
+/* Tablets and small laptops: stack the two-column grid. */
+@media (max-width: 960px) {
+	.codecaste-country-access-control-wrap .codecaste-country-access-control-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Tablets/large phones: tighten card padding, wrap the diagnostics table
+   inside a card that's now edge-to-edge, and let long table content scroll
+   horizontally instead of overflowing the viewport. */
+@media (max-width: 782px) {
+	.codecaste-country-access-control-card {
+		padding: 14px 16px 6px;
+	}
+
+	.codecaste-country-access-control-card h2 {
+		font-size: 1.2em;
+	}
+
+	.codecaste-country-access-control-country-select {
+		font-size: 16px; /* avoid iOS zoom-on-focus */
+	}
+
+	/* Wrap the block log table in a horizontally scrollable container so
+	   narrow screens don't force page-wide horizontal scroll. */
+	.codecaste-country-access-control-log-table-wrap {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.codecaste-country-access-control-log-table {
+		min-width: 480px;
+	}
+
+	/* Every submit button on the page (main form and sidebar cards alike)
+	   goes full-width so it's easy to tap and never sits awkwardly next to
+	   a wrapped label. */
+	.codecaste-country-access-control-wrap form .button,
+	.codecaste-country-access-control-wrap form input[type="submit"] {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Phones: further reduce spacing, shrink the multi-select so it doesn't
+   dominate the viewport, and stack diagnostic definition lists cleanly. */
+@media (max-width: 480px) {
+	.codecaste-country-access-control-wrap h1 {
+		font-size: 1.3em;
+	}
+
+	.codecaste-country-access-control-card {
+		padding: 12px 12px 4px;
+		margin-bottom: 14px;
+	}
+
+	.codecaste-country-access-control-dl dt {
+		font-size: 13px;
+	}
+
+	.codecaste-country-access-control-dl dd {
+		font-size: 13px;
+		word-break: break-word;
+	}
+
+	.codecaste-country-access-control-log-table td,
+	.codecaste-country-access-control-log-table th {
+		white-space: nowrap;
+	}
+}

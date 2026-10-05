@@ -1,0 +1,19 @@
+Third-Party Data Format Note
+=============================
+
+Country Access Control ships with a small starter IP-range dataset
+(database/source/starter-country-ranges.csv) to work immediately after
+activation. It does not bundle any third-party GeoIP database.
+
+For production-grade accuracy, administrators can use Download Latest Database
+under Settings -> Country Access Control to fetch the free DB-IP Country Lite
+CSV directly from db-ip.com and import it into the site's own tables.
+
+  License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+  Source:  https://db-ip.com/db/download/ip-to-country-lite
+
+If you use that dataset, please review and comply with its license and
+attribution requirements; it is not distributed with this plugin.
+
+No runtime external API calls are made for geolocation lookups.
+No PHP SQLite extension is required.
